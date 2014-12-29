@@ -43,6 +43,14 @@ class Response
     }
 
     /**
+     * @return string
+     */
+    public function getStatusReturnObject()
+    {
+        return $this->payload['result']['status']['object'];
+    }
+
+    /**
      * @return array
      */
     public function getPayload()
