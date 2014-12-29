@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<response>
+    <result>
+        <status>
+            <code>N0301</code>
+            <text>Das Anlegen des Domainkontaktes wurde erfolgreich gestartet.</text>
+            <type>notify</type>
+            <object>
+                <type>handle</type>
+                <value>9926612</value>
+            </object>
+        </status>
+    </result>
+</response>

@@ -286,6 +286,53 @@ class ClientIntegrationTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function itShouldMakeAHandleCreateCall()
+    {
+        $taskName = 'HandleCreate';
+
+        $responseXml = $this->getResponseXml($taskName);
+        $expectedRequest = $this->getExpectedRequestXml($taskName);
+
+        $expectedResult = new Client\Response(
+            array(
+                'result' => array(
+                    'status' => array(
+                        'code' => 'N0301',
+                        'text' => 'Das Anlegen des Domainkontaktes wurde erfolgreich gestartet.',
+                        'type' => 'notify',
+                        'object' => array(
+                            'type' => 'handle',
+                            'value' => '9926612'
+                        )
+                    )
+                )
+            )
+        );
+
+        $client = $this->buildClientAndExpectRequestToBeSended($responseXml, $expectedRequest);
+
+        $task = new Request\Task\HandleCreate();
+        $task->fill(array(
+            'type' => 'PERSON',
+            'fname' => 'Peter',
+            'lname' => 'Muster',
+            'organization' => 'PDA',
+            'address' => 'Musterstrasse 3',
+            'pcode' => '12345',
+            'city' => 'Musterstadt',
+            'country' => 'Deutschland',
+            'phone' => '+49-12345-12345',
+            'fax' => '+49-12345-12345',
+            'email' => 'Muster@example.com'
+        ))->replyTo('customer@example.com');
+
+        $this->assertEquals($expectedResult, $client->call($task));
+    }
+
+
+    /**
      * @param $taskName
      * @return string
      */
