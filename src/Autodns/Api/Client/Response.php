@@ -47,7 +47,10 @@ class Response
      */
     public function getStatusReturnObject()
     {
-        return $this->payload['result']['status']['object'];
+        if ( isset($this->payload['result']['status']['object']) ) {
+            return $this->payload['result']['status']['object'];
+        }
+        return false;
     }
 
     /**
