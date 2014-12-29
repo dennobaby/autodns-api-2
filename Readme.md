@@ -22,7 +22,7 @@ use Autodns\Api\Account\Info;
 use Autodns\Api\Client\Factory;
 
 $accountInfo = new Info(
-    'https://api.autodns.com',
+    'https://gateway.autodns.com',
     'username',
     'password',
     15
