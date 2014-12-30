@@ -26,7 +26,8 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             ->withKeys(array('created', 'payable'))
             ->withQuery($query);
 
-        $request = new Request($task);
+        $request = new Request($task, null, '0987654321');
+        $request->withReplyTo('customer@example.com');
 
         $expectedRequestArray = array(
             'auth' => array(),
@@ -61,11 +62,40 @@ class RequestTest extends \PHPUnit_Framework_TestCase
                         )
                     )
                 )
-            )
+            ),
+            'ctid' => '0987654321',
+            'reply_to' => 'customer@example.com'
         );
 
         $output = $request->asArray();
 
         $this->assertEquals($expectedRequestArray, $output);
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldReturnInstanceOfTypeHandleCreate()
+    {
+        $request = new Request();
+        $request->ofType('HandleCreate');
+
+        $this->assertInstanceOf( 'Autodns\Api\Client\Request\Task\HandleCreate', $request->getTask() );
+    }
+
+    /**
+     * @test
+     */
+    public function itShouldReturnGivenAuth()
+    {
+        $auth = array(
+            'username' => 'customer',
+            'password' => 'password',
+            'context' => 4
+        );
+        $request = new Request();
+        $request->setAuth($auth);
+
+        $this->assertEquals( $auth, $request->getAuth() );
     }
 }

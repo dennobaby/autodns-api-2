@@ -23,10 +23,10 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 		$response = new Response($payload);
 
 		$this->assertTrue( $response->isSuccessful() );
-		$this->assertEquals( $response->getStatusCode(), 'S0105' );
-		$this->assertEquals( $response->getStatusType(), 'success' );
+		$this->assertEquals( 'S0105', $response->getStatusCode() );
+		$this->assertEquals( 'success', $response->getStatusType() );
 		$this->assertFalse( $response->getStatusReturnObject() );
-		$this->assertEquals( $response->getPayload(), $payload );
+		$this->assertEquals( $payload, $response->getPayload() );
 	}
 
 	/**

@@ -70,7 +70,7 @@ class Request
         );
 
         if($this->replyTo) {
-            $request['replyTo'] = $this->replyTo;
+            $request['reply_to'] = $this->replyTo;
         }
 
         if ($this->ctid) {
