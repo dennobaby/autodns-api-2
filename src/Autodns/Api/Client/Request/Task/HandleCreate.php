@@ -9,6 +9,7 @@ class HandleCreate implements Task
 {
     private $handleData = array();
     private $replyTo;
+    private $forceHandleCreate;
 
     /**
      * @param array $handleData
@@ -22,6 +23,11 @@ class HandleCreate implements Task
 
     public function replyTo($replyTo) {
         $this->replyTo = $replyTo;
+        return $this;
+    }
+
+    public function forceHandleCreate($forceHandleCreate) {
+        $this->forceHandleCreate = $forceHandleCreate;
         return $this;
     }
 
@@ -44,6 +50,12 @@ class HandleCreate implements Task
             'phone',
             'fax',
             'email',
+
+            'sip',
+            'protection',
+            'nic_ref',
+            'remarks',
+            'extension'
         );
         if ( in_array( $name, $fields ) ) {
             $this->handleData[ $name ] = $arguments[0];
@@ -61,10 +73,16 @@ class HandleCreate implements Task
             'code' => '0301',
             'handle' => $this->handleData
         );
-        $array['handle']['protection'] = 'A';
+
+        if ( ! isset($array['handle']['protection']) ) {
+            $array['handle']['protection'] = 'B';
+        }
 
         if ( $this->replyTo ) {
             $array['reply_to'] = $this->replyTo;
+        }
+        if ( $this->forceHandleCreate ) {
+            $array['force_handle_create'] = $this->forceHandleCreate;
         }
 
         return $array;

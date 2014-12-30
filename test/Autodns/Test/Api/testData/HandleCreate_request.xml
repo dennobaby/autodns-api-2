@@ -19,7 +19,7 @@
       <phone>+49-12345-12345</phone>
       <fax>+49-12345-12345</fax>
       <email>Muster@example.com</email>
-      <protection>A</protection>
+      <protection>B</protection>
     </handle>
     <reply_to>customer@example.com</reply_to>
   </task>
