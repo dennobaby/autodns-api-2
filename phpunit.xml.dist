@@ -14,8 +14,9 @@
 
     <filter>
         <blacklist>
-            <file>/src/Autodns/Api/Client/Request/Task.php</file>
-            <file>/src/Autodns/Api/Client/Request/Task/QueryInterface.php</file>
+            <file>src/Autodns/Api/Client/Request/Task.php</file>
+            <file>src/Autodns/Api/Client/Request/Task/QueryInterface.php</file>
+            <directory>vendor</directory>
         </blacklist>
     </filter>
 </phpunit>

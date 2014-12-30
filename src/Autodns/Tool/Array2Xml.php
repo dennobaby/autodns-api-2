@@ -58,10 +58,10 @@ class Array2Xml
      */
     private function bool2str($input)
     {
-        if (!($input === true || $input === false)) {
-            return $input;
+        if (is_bool($input)) {
+            return $input ? 'true' : 'false';
         }
 
-        return $input ? 'true' : 'false';
+        return $input;
     }
 }
