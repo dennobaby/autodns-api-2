@@ -7,7 +7,8 @@
         "kriswallsmith/buzz": "dev-master"
     },
     "require-dev": {
-        "schnipseljagd/testdatabuilder": "dev-master"
+        "schnipseljagd/testdatabuilder": "dev-master",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": { "Autodns": "src" }
