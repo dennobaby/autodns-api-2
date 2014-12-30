@@ -4,6 +4,7 @@ Autodns-API
 A full-featured implementation of the [AutoDNS-XML-API](http://www.internetx.com/en/software/autodns/xml-api.html).
 
 [![Build Status](https://secure.travis-ci.org/rhurling/autodns-api.png?branch=master)](http://travis-ci.org/rhurling/autodns-api)
+[![Coverage Status](https://coveralls.io/repos/rhurling/autodns-api/badge.png)](https://coveralls.io/r/rhurling/autodns-api)
 
 Design goals
 ------------
