@@ -5,6 +5,10 @@ namespace Autodns\Api\Client\Request\Task;
 
 use Autodns\Api\Client\Request\Task;
 
+/**
+ * Class HandleCreate
+ * @package Autodns\Api\Client\Request\Task
+ */
 class HandleCreate implements Task
 {
     private $handleData = array();
@@ -27,7 +31,7 @@ class HandleCreate implements Task
     }
 
     public function forceHandleCreate($forceHandleCreate) {
-        $this->forceHandleCreate = $forceHandleCreate;
+        $this->forceHandleCreate = $forceHandleCreate ? '1' : false;
         return $this;
     }
 
@@ -78,11 +82,11 @@ class HandleCreate implements Task
             $array['handle']['protection'] = 'B';
         }
 
-        if ( $this->replyTo ) {
-            $array['reply_to'] = $this->replyTo;
-        }
         if ( $this->forceHandleCreate ) {
             $array['force_handle_create'] = $this->forceHandleCreate;
+        }
+        if ( $this->replyTo ) {
+            $array['reply_to'] = $this->replyTo;
         }
 
         return $array;

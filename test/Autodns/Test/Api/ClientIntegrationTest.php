@@ -314,19 +314,22 @@ class ClientIntegrationTest extends TestCase
         $client = $this->buildClientAndExpectRequestToBeSended($responseXml, $expectedRequest);
 
         $task = new Request\Task\HandleCreate();
-        $task->fill(array(
-            'type' => 'PERSON',
-            'fname' => 'Peter',
-            'lname' => 'Muster',
-            'organization' => 'PDA',
-            'address' => 'Musterstrasse 3',
-            'pcode' => '12345',
-            'city' => 'Musterstadt',
-            'country' => 'Deutschland',
-            'phone' => '+49-12345-12345',
-            'fax' => '+49-12345-12345',
-            'email' => 'Muster@example.com'
-        ))->replyTo('customer@example.com');
+        $task
+            ->fill(array(
+                'type' => 'PERSON',
+                'fname' => 'Peter',
+                'lname' => 'Muster',
+                'organization' => 'PDA',
+                'address' => 'Musterstrasse 3',
+                'pcode' => '12345',
+                'city' => 'Musterstadt',
+                'country' => 'Deutschland',
+                'phone' => '+49-12345-12345',
+                'fax' => '+49-12345-12345',
+            ))
+            ->email('Muster@example.com')
+            ->forceHandleCreate(true)
+            ->replyTo('customer@example.com');
 
         $this->assertEquals($expectedResult, $client->call($task));
     }

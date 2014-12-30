@@ -21,6 +21,7 @@
       <email>Muster@example.com</email>
       <protection>B</protection>
     </handle>
+    <force_handle_create>1</force_handle_create>
     <reply_to>customer@example.com</reply_to>
   </task>
 </request>
