@@ -65,7 +65,7 @@ class HandleCreate implements Task
             $this->handleData[ $name ] = $arguments[0];
             return $this;
         }
-        return false;
+        trigger_error('Call to undefined method '.__CLASS__.'::'.$name.'()', E_USER_ERROR);
     }
 
     /**
