@@ -37,6 +37,11 @@ class XmlDelivery
         $this->xmlToArrayConverter = $xmlToArrayConverter;
     }
 
+    public function setTimeout( $timeout )
+    {
+        $this->sender->getClient()->setTimeout( $timeout );
+    }
+
     /**
      * @param string $url
      * @param Client\Request $request

@@ -30,6 +30,11 @@ class Client
         $this->accountInfo = $accountInfo;
     }
 
+    public function setTimeout( $timeout )
+    {
+        $this->delivery->setTimeout( $timeout );
+    }
+
     /**
      * @param Task $task
      * @return Response
