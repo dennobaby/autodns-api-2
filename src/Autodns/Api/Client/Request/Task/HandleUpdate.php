@@ -6,14 +6,15 @@ namespace Autodns\Api\Client\Request\Task;
 use Autodns\Api\Client\Request\Task;
 
 /**
- * Class HandleCreate
+ * Class HandleUpdate
  * @package Autodns\Api\Client\Request\Task
  */
-class HandleCreate implements Task
+class HandleUpdate implements Task
 {
     private $handleData = array();
     private $replyTo;
     private $forceHandleCreate;
+    private $confirmOwnerConsent;
 
     /**
      * @param array $handleData
@@ -40,6 +41,15 @@ class HandleCreate implements Task
      */
     public function forceHandleCreate($forceHandleCreate) {
         $this->forceHandleCreate = $forceHandleCreate ? '1' : false;
+        return $this;
+    }
+
+    /**
+     * @param $confirmOwnerConsent
+     * @return $this
+     */
+    public function confirmOwnerConsent($confirmOwnerConsent){
+        $this->confirmOwnerConsent = $confirmOwnerConsent ? '1' : false;
         return $this;
     }
 
@@ -89,7 +99,7 @@ class HandleCreate implements Task
     public function asArray()
     {
         $array = array(
-            'code' => '0301',
+            'code' => '0302',
             'handle' => $this->handleData
         );
 
@@ -100,6 +110,11 @@ class HandleCreate implements Task
         if ( $this->forceHandleCreate ) {
             $array['force_handle_create'] = $this->forceHandleCreate;
         }
+
+        if($this->confirmOwnerConsent){
+            $array['confirm_owner_consent'] = $this->confirmOwnerConsent;
+        }
+
         if ( $this->replyTo ) {
             $array['reply_to'] = $this->replyTo;
         }
