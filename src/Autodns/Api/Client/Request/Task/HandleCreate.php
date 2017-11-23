@@ -25,16 +25,29 @@ class HandleCreate implements Task
         return $this;
     }
 
+    /**
+     * @param $replyTo
+     * @return $this
+     */
     public function replyTo($replyTo) {
         $this->replyTo = $replyTo;
         return $this;
     }
 
+    /**
+     * @param $forceHandleCreate
+     * @return $this
+     */
     public function forceHandleCreate($forceHandleCreate) {
         $this->forceHandleCreate = $forceHandleCreate ? '1' : false;
         return $this;
     }
 
+    /**
+     * @param $name
+     * @param $arguments
+     * @return $this
+     */
     function __call( $name, $arguments ) {
         $fields = array(
             'alias',
@@ -66,6 +79,8 @@ class HandleCreate implements Task
             return $this;
         }
         trigger_error('Call to undefined method '.__CLASS__.'::'.$name.'()', E_USER_ERROR);
+
+        return $this;
     }
 
     /**

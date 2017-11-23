@@ -140,7 +140,7 @@ Autodns tasks
 ### Handle
 
  * ~~Handle Create (0301)~~
- * Handle Update (0302)
+ * ~~Handle Update (0302)~~
  * ~~Handle Delete (0303)~~
  * Handle Inquire (0304)
 
