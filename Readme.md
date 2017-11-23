@@ -1,10 +1,18 @@
-Autodns-API
+Autodns-API-2
 ===========
 
 A (not yet) full-featured implementation of the [AutoDNS-XML-API](http://www.internetx.com/en/software/autodns/xml-api.html).
 
 [![Build Status](https://secure.travis-ci.org/rhurling/autodns-api.png?branch=master)](http://travis-ci.org/rhurling/autodns-api)
 [![Coverage Status](https://coveralls.io/repos/rhurling/autodns-api/badge.png)](https://coveralls.io/r/rhurling/autodns-api)
+
+Why -2?
+--------
+
+I checked all Repos on github where the API is imlemented. There are many, but most are abanded. 
+So i decided to clone from  [rhurling/autodns-api](https://github.com/rhurling/autodns-api) (forked from [tillkahlbrock/autodns-api](https://github.com/tillkahlbrock/autodns-api)).
+
+My personal goal is to fully implement all features of the xml-api.
 
 Design goals
 ------------
@@ -26,7 +34,7 @@ $accountInfo = new Info(
     'https://gateway.autodns.com',
     'username',
     'password',
-    15
+    4
 );
 
 $client = Factory::create($accountInfo);
@@ -132,7 +140,7 @@ Autodns tasks
 
  * ~~Handle Create (0301)~~
  * Handle Update (0302)
- * Handle Delete (0303)
+ * ~~Handle Delete (0303)~~
  * Handle Inquire (0304)
 
 ### Redirect
