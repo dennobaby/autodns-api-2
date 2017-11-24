@@ -5,6 +5,8 @@ A (not yet) full-featured implementation of the [AutoDNS-XML-API](http://www.int
 
 [![Build Status](https://secure.travis-ci.org/dennobaby/autodns-api-2.png?branch=master)](http://travis-ci.org/dennobaby/autodns-api-2)
 [![Coverage Status](https://coveralls.io/repos/github/dennobaby/autodns-api-2/badge.svg?branch=master)](https://coveralls.io/github/dennobaby/autodns-api-2?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/dbc4f6da71fbe6605fef/maintainability)](https://codeclimate.com/github/dennobaby/autodns-api-2/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dbc4f6da71fbe6605fef/test_coverage)](https://codeclimate.com/github/dennobaby/autodns-api-2/test_coverage)
 
 Why -2?
 --------
