@@ -3,9 +3,8 @@ Autodns-API-2
 
 A (not yet) full-featured implementation of the [AutoDNS-XML-API](http://www.internetx.com/en/software/autodns/xml-api.html).
 
-<!--
-[![Build Status](https://secure.travis-ci.org/rhurling/autodns-api.png?branch=master)](http://travis-ci.org/rhurling/autodns-api)
-[![Coverage Status](https://coveralls.io/repos/rhurling/autodns-api/badge.png)](https://coveralls.io/r/rhurling/autodns-api) -->
+[![Build Status](https://secure.travis-ci.org/dennobaby/autodns-api-2.png?branch=master)](http://travis-ci.org/dennobaby/autodns-api-2)
+[![Coverage Status](https://coveralls.io/repos/github/dennobaby/autodns-api-2/badge.svg?branch=master)](https://coveralls.io/github/dennobaby/autodns-api-2?branch=master)
 
 Why -2?
 --------
@@ -142,7 +141,7 @@ Autodns tasks
  * ~~Handle Create (0301)~~
  * ~~Handle Update (0302)~~
  * ~~Handle Delete (0303)~~
- * Handle Inquire (0304)
+ * ~~Handle Inquire (0304)~~
 
 ### Redirect
 
